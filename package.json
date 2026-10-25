@@ -1,0 +1,15 @@
+{
+  "name": "devsecops-ci-cd-demo",
+  "private": true,
+  "workspaces": ["backend", "frontend"],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c blue,green \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "dev:backend": "npm --workspace backend run dev",
+    "dev:frontend": "npm --workspace frontend run dev",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "coverage": "npm run coverage --workspace backend && npm run coverage --workspace frontend",
+    "build": "npm run build --workspaces --if-present"
+  },
+  "devDependencies": { "@vitest/coverage-v8": "^5.0.5", "concurrently": "^9.1.2", "vitest": "^5.0.5" }
+}
