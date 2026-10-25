@@ -23,7 +23,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Set up Node.js
-        uses: actions/setup-node@1e60f620b9541d490e58b9c6bb1d3b87313fbe3a # v4.0.4
+        uses: actions/setup-node@v4 # v4.0.4
         with:
           node-version: 22
           cache: npm
@@ -56,7 +56,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Set up Node.js
-        uses: actions/setup-node@1e60f620b9541d490e58b9c6bb1d3b87313fbe3a # v4.0.4
+        uses: actions/setup-node@v4 # v4.0.4
         with:
           node-version: 22
           cache: npm
@@ -199,4 +199,5 @@ jobs:
           name: trivy-image-reports
           path: trivy-*-image.json
           if-no-files-found: warn
+
 
